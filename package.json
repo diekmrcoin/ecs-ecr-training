@@ -1,0 +1,23 @@
+{
+  "name": "ecs-ecr-training",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "repository": "git@github.com:diekmrcoin/ecs-ecr-training.git",
+  "author": "Diego Maroto <diego.diemg@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon dist/main.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3"
+  }
+}
