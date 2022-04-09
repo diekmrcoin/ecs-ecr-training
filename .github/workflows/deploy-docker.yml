@@ -17,7 +17,7 @@ jobs:
     - name: Manual reason
       if: ${{ github.event.inputs.reason }}
       run: |
-        echo "Reason: ${{ github.event.inputs.reason }}"
+        echo "::debug::Reason: ${{ github.event.inputs.reason }}"
   build:
     runs-on: ubuntu-latest
     steps:
