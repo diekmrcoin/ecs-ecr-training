@@ -4,9 +4,9 @@ import bodyParser from 'body-parser';
 const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
-
+const manualCount = 1;
 app.get('/', function (req, res) {
-  res.send({ message: 'Hello Random World: ' + Math.floor(Math.random() * 100) });
+  res.send({ message: `Hello Random World[${manualCount}]: ${Math.floor(Math.random() * 100)}` });
 });
 
 app.listen(port, () => {
