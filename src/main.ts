@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', function (req, res) {
-  res.send({ message: 'Hello World!' });
+  res.send({ message: 'Hello Random World: ' + Math.floor(Math.random() * 100) });
 });
 
 app.listen(port, () => {
