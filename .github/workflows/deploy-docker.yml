@@ -1,17 +1,25 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason of the manual run'
+        required: true
+        default: 'I''m lame and I don''t know how to program'
 
 jobs:
-
-  build:
-
+  printInputs:
     runs-on: ubuntu-latest
-
+    steps:
+    - name: Manual reason
+      if: ${{ github.event.inputs.reason }}
+      run: |
+        echo "Reason: ${{ github.event.inputs.reason }}"
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
